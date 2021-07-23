@@ -1,0 +1,4 @@
+service:{
+  test: (text) -> (text) query;
+  supportedInterface: (text) -> (bool) query;
+}
