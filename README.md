@@ -25,13 +25,13 @@
 
 ## About us
 
-   We are from ICP Deland team. 
+   We are from Deland-Labs team. 
 
    We are building a decentralized exchange based on Dfinity with Open Order Protocol.
 
    Offcial Website : [https://deland.one](https://deland.one)
 
-## Reference
+## References
 
 To learn more before you start working with Dfinity Self Describing Standard, see the following documentation available online:
 
