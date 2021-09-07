@@ -1,4 +1,4 @@
-use ic_cdk::export::candid::{candid_method,export_service, IDLProg};
+use ic_cdk::export::candid::{candid_method, IDLProg};
 
 #[ic_cdk_macros::query]
 #[candid_method(query)]
@@ -7,7 +7,7 @@ fn test(test_param: String) -> String {
 }
 
 #[ic_cdk_macros::query(name = "supportedInterface")]
-#[candid_method(query,rename="supportedInterface")]
+#[candid_method(query, rename = "supportedInterface")]
 fn supported_inteface(interface: String) -> bool {
     let verify_service_desc = format!("service:{{ {0};}}", interface);
     let verify_ast_result = verify_service_desc.parse::<IDLProg>();
@@ -33,4 +33,4 @@ candid::export_service!();
 #[candid_method(query, rename = "__get_candid_interface_tmp_hack")]
 fn __export_did_tmp_() -> String {
     __export_service()
-} 
+}

@@ -14,7 +14,7 @@ fn __export_did_tmp_() -> String {
 } 
 ```
 
-Developer can check canister's interface through __get_candid_interface_tmp_hack.
+Developer can check canister's interface through `__get_candid_interface_tmp_hack`.
 
 ## Overview
 
