@@ -18,7 +18,7 @@ fn supported_inteface(interface: String) -> bool {
             let verify_pretty_sub: String =
                 verify_pretty.replace("service : { ", "").replace(" }", "");
 
-            let origin_did = get_did();
+            let origin_did = __export_did_tmp_();
             let origin_ast: IDLProg = origin_did.parse().unwrap();
             let origin_pretty: String = candid::parser::types::to_pretty(&origin_ast, 80);
             origin_pretty.contains(&verify_pretty_sub)
@@ -27,7 +27,10 @@ fn supported_inteface(interface: String) -> bool {
     }
 }
 
-export_service!();
-fn get_did() -> String {
+candid::export_service!();
+
+#[ic_cdk_macros::query(name = "__get_candid_interface_tmp_hack")]
+#[candid_method(query, rename = "__get_candid_interface_tmp_hack")]
+fn __export_did_tmp_() -> String {
     __export_service()
-}
+} 

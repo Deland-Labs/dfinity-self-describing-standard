@@ -1,5 +1,21 @@
 # Dfinity Self Describing Standard
 
+<strong>Please do not use this standard</strong>
+
+Motoko canister support default method `__get_candid_interface_tmp_hack` to get did, if rust canister implement this method , `supportedInterface` can be removed from the standard.
+
+```RUST
+candid::export_service!();
+
+#[query(name = "__get_candid_interface_tmp_hack")]
+#[candid_method(query, rename = "__get_candid_interface_tmp_hack")]
+fn __export_did_tmp_() -> String {
+    __export_service()
+} 
+```
+
+Developer can check canister's interface through __get_candid_interface_tmp_hack.
+
 ## Overview
 
    The ERC1820 registry contract provides a common contract interface registration/query service, and Dfinity also needs such a service.
@@ -12,9 +28,9 @@
 
    Canister should implement the interface self-describing.
 
-   Dfinity can solve the problem solved by ERC1820 through the interface self-description, and achieve the self-description of the canister interface by implementing supported Interface(text) -> (bool).
+   Dfinity can solve the problem solved by ERC1820 through the interface self-description, and achieve the self-description of the canister interface by implementing supportedInterface(text) -> (bool).
 
-## Example 
+## How to test 
    You can test it with the following command :
 
    ```
