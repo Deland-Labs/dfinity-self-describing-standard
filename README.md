@@ -2,7 +2,7 @@
 
 <strong>Please do not use this standard</strong>
 
-Motoko canister support default method `__get_candid_interface_tmp_hack` to get did, if rust canister implement this method , `supportedInterface` can be removed from the standard.
+Motoko canister support default method `__get_candid_interface_tmp_hack` to get did, if rust canister implement this method ,Developer can check canister's interface through `__get_candid_interface_tmp_hack`.
 
 ```RUST
 candid::export_service!();
@@ -14,7 +14,7 @@ fn __export_did_tmp_() -> String {
 } 
 ```
 
-Developer can check canister's interface through `__get_candid_interface_tmp_hack`.
+
 
 ## Overview
 
